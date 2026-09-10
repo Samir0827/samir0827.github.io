@@ -1,0 +1,226 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #34322d;
+    background: #f8f8f7;
+    line-height: 1.6;
+}
+
+a {
+    color: #0081f2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #0000000f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34322d;
+}
+
+.logo span {
+    color: #0081f2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul a {
+    color: #5e5e5b;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    color: #0081f2;
+    text-decoration: none;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: #ffffff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #0081f2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #5e5e5b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== Main Content ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #34322d;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #34322d;
+}
+
+p {
+    color: #5e5e5b;
+    margin-bottom: 1rem;
+}
+
+/* ===== Cards Grid ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #0000000f;
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ===== Contact Form ===== */
+form {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #34322d;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #0000001f;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #ffffff;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0081f2;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    background: #0081f2;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ===== Contact Info ===== */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #ffffff;
+    border-top: 1px solid #0000000f;
+    padding: 2rem;
+    text-align: center;
+    color: #858481;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    nav ul { gap: 1rem; }
+    nav ul a { font-size: 0.85rem; }
+    main { padding: 2.5rem 1.25rem; }
+}
