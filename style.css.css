@@ -1,0 +1,297 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #34322d;
+    background-color: #f8f8f7;
+    /* Light watermark of Al Ruya logo */
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 45%;
+    opacity: 1;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Soft overlay to fade the logo further */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(248, 248, 247, 0.92);
+    z-index: -1;
+    pointer-events: none;
+}
+
+a {
+    color: #0081f2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #0000000f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34322d;
+}
+
+.logo span {
+    color: #0081f2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+}
+
+nav ul a {
+    color: #5e5e5b;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    color: #0081f2;
+    text-decoration: none;
+    border-bottom-color: #0081f2;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(2px);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #0081f2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #5e5e5b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== Main Content ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: rgba(248, 248, 247, 0.75);
+    border-radius: 16px;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #34322d;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #34322d;
+}
+
+p {
+    color: #5e5e5b;
+    margin-bottom: 1rem;
+}
+
+/* ===== Cards Grid ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #0000000f;
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ===== Partner Logo Block ===== */
+.partner-card {
+    background: #ffffff;
+    border: 1px solid #0000000f;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.partner-card .partner-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34322d;
+}
+
+.partner-card .partner-tag {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0081f2;
+    font-weight: 600;
+}
+
+.partner-card .partner-desc {
+    font-size: 0.95rem;
+    color: #5e5e5b;
+}
+
+.partner-card .partner-link {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* ===== Contact Form ===== */
+form {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #34322d;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #0000001f;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #ffffff;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0081f2;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    background: #0081f2;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ===== Contact Info ===== */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #ffffff;
+    border-top: 1px solid #0000000f;
+    padding: 2rem;
+    text-align: center;
+    color: #858481;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    body { background-size: 70%; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    nav ul { gap: 1rem; }
+    nav ul a { font-size: 0.85rem; }
+    main { padding: 2.5rem 1.25rem; }
+}
