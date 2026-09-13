@@ -1,0 +1,603 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0a1628;
+    --bg-darker: #060d18;
+    --bg-panel: #0f1e33;
+    --accent: #d97a3a;
+    --accent-hover: #e88a4a;
+    --text-primary: #f5f2ed;
+    --text-secondary: #8b95a5;
+    --text-muted: #5a6675;
+    --border: #1e2d42;
+    --border-light: #263852;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-dark);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background: rgba(6, 13, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.logo-mark {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    background: rgba(217, 122, 58, 0.08);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.logo-text strong {
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+.logo-text strong span {
+    color: var(--accent);
+}
+
+.logo-text small {
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+}
+
+nav ul a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent);
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #ffffff;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+
+.nav-cta:hover {
+    background: var(--accent-hover);
+    color: #ffffff;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    padding: 6rem 2rem 5rem;
+    text-align: left;
+    background: var(--bg-darker);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 75% 50%, rgba(217, 122, 58, 0.15) 0%, transparent 45%),
+        linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(6, 13, 24, 0.98) 100%);
+    z-index: 1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(30, 45, 66, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 45, 66, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+.hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.hero-tag::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 .accent {
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 0.9rem 1.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.hero-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+/* ===== Main Content ===== */
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* ===== Feature Split Section (like RFID screenshot) ===== */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.split-image {
+    background: var(--bg-darker);
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /* Replace with your RFID image */
+    background-image: url('rfid-warehouse.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.split-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 22, 40, 0.4) 0%, rgba(6, 13, 24, 0.7) 100%);
+}
+
+.split-content {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-label {
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.split-label::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+}
+
+.split-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.split-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ===== Feature List (two-column checklist) ===== */
+.feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 2rem;
+    list-style: none;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.feature-list li {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+}
+
+/* ===== Cards Grid ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-light);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    background: rgba(217, 122, 58, 0.06);
+}
+
+/* ===== Partner Card ===== */
+.partner-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-light);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.partner-card .partner-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.partner-card .partner-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.partner-card .partner-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.partner-card .partner-link {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ===== Contact Form ===== */
+form {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--bg-panel);
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+/* ===== Contact Info ===== */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+.contact-info strong {
+    color: var(--text-primary);
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .split-section { grid-template-columns: 1fr; }
+    .split-image { min-height: 280px; }
+    .feature-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .hero { padding: 4rem 1.25rem 3rem; }
+    .hero h1 { font-size: 2.5rem; letter-spacing: -0.5px; }
+    .hero p { font-size: 1rem; }
+    .hero-tag { padding-left: 2.5rem; font-size: 0.7rem; }
+    .hero-tag::before { width: 1.5rem; }
+    nav { padding: 1rem 1.25rem; }
+    nav ul { gap: 1.1rem; }
+    nav ul a { font-size: 0.7rem; letter-spacing: 1px; }
+    .nav-cta { padding: 0.55rem 1rem; font-size: 0.68rem; }
+    main { padding: 3rem 1.25rem; }
+    h2 { font-size: 1.75rem; }
+    .split-content { padding: 2rem 1.5rem; }
+    .split-content h2 { font-size: 1.75rem; }
+    .logo-mark { width: 36px; height: 36px; font-size: 1rem; }
+    .logo-text strong { font-size: 1rem; }
+}
