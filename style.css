@@ -918,15 +918,16 @@ footer {
 /* ===== Featured Partner Card (Maria-Soft) ===== */
 .partner-featured {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;   /* text column slightly wider */
+    grid-template-columns: 1.2fr 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: stretch;               /* equal-height columns */
     padding: 3rem;
 }
 
 .partner-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;            /* center text vertically */
     gap: 1rem;
     text-align: left;
 }
@@ -942,7 +943,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;                     /* white background for logo strip */
+    background: var(--bg-panel);        /* matches text card */
     border-radius: 8px;
     padding: 1.5rem 1rem;
     border: 1px solid var(--border);
@@ -957,7 +958,7 @@ footer {
     object-fit: contain;
 }
 
-/* Responsive — stack vertically on narrow screens */
+/* Responsive */
 @media (max-width: 900px) {
     .partner-featured {
         grid-template-columns: 1fr;
