@@ -975,3 +975,23 @@ footer {
         max-width: 100%;
     }
 }
+/* ===== Clickable Logo Link ===== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;      /* removes the default underline */
+    color: inherit;             /* keeps the existing text color */
+    transition: opacity 0.2s;
+}
+
+.logo-link:hover {
+    opacity: 0.85;              /* subtle hover feedback */
+    text-decoration: none;
+}
+
+.logo-link:focus-visible {
+    outline: 2px solid var(--accent);   /* visible focus for keyboard users */
+    outline-offset: 4px;
+    border-radius: 4px;
+}
