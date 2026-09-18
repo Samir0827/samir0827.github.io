@@ -975,23 +975,45 @@ footer {
         max-width: 100%;
     }
 }
-/* ===== Clickable Logo Link ===== */
+/* ===== Logo (outer container) ===== */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* ===== Clickable Logo Link (inner flex row) ===== */
 .logo-link {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    text-decoration: none;      /* removes the default underline */
-    color: inherit;             /* keeps the existing text color */
+    text-decoration: none;
+    color: inherit;
     transition: opacity 0.2s;
 }
 
 .logo-link:hover {
-    opacity: 0.85;              /* subtle hover feedback */
+    opacity: 0.85;
     text-decoration: none;
 }
 
 .logo-link:focus-visible {
-    outline: 2px solid var(--accent);   /* visible focus for keyboard users */
+    outline: 2px solid var(--accent);
     outline-offset: 4px;
     border-radius: 4px;
+}
+
+/* ===== Logo image ===== */
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* ===== Logo text block ===== */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
 }
