@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Al Ruya for IT, AI, and RFID solutions.">
+    <title>Contact | Al Ruya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Al Ruya home">
+                    <img src="logo.png" alt="Al Ruya Logo" class="logo-mark">
+                    <div class="logo-text">
+                        <strong><span>AL RUYA</span> For IT SOLUTIONS</strong>
+                        <strong><h3><span>الرؤية</span> لحلول تقنية المعلومات</h3></strong>
+                    </div>
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta">Start a Conversation ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <span class="hero-tag"><h1>Contact Us</h1></span>
+            <h2>Send Us a Message</h2>
+
+            <!--
+              IMPORTANT: Replace "your-form-id" below with the real Formspree ID
+              Example: https://formspree.io/f/xnqkabcd
+            -->
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <!-- Routes replies directly to the visitor -->
+                <input type="hidden" name="_replyto" value="">
+                <!-- Subject of the email you receive -->
+                <input type="hidden" name="_subject" value="New message from alruya.qa">
+                <!-- Disable Formspree's default captcha styling -->
+                <input type="text" name="_gotcha" style="display:none">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Prefer email? Write to us directly at
+                <a href="mailto:info@alruya.qa?subject=Website%20Inquiry">info@alruya.qa</a>.
+            </p>
+        </section>
+
+        <section class="contact-info">
+            <h2>Other Ways to Reach Us</h2>
+            <p><strong>Email:</strong> <a href="mailto:info@alruya.qa">info@alruya.qa</a></p>
+            <p><strong>Phone:</strong> +974 3332 0111</p>
+            <p><strong>Address:</strong> Doha, Qatar</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Al Ruya. All rights reserved.
+    </footer>
+</body>
+</html>
